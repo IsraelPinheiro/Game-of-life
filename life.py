@@ -1,10 +1,11 @@
 import pygame
 import os, sys
 from grid import Grid
+import pyautogui
 
 os.environ["SDL_VIDEO_CENTERED"] = "1"
 
-size = WIDTH, HEIGHT = 1920,1080 #Screen size
+size = WIDTH, HEIGHT = pyautogui.size()
 
 #Colors dfinition
 BLACK = (0,0,0)
