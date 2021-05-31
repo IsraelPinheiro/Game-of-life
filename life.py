@@ -52,14 +52,15 @@ while run:
             if event.key == pygame.K_x: #X - Quit
                 pygame.quit()
 
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            mouse_pos_x, mouse_pos_y = pygame.mouse.get_pos()
-            clicked_pos_x = int(mouse_pos_x/scale)
-            clicked_pos_y = int(mouse_pos_y/scale)
-            if grid.grid_array[clicked_pos_x][clicked_pos_y] == 1:
-                grid.grid_array[clicked_pos_x][clicked_pos_y] = 0
-            else:
-                grid.grid_array[clicked_pos_x][clicked_pos_y] = 1
+        if pause:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos_x, mouse_pos_y = pygame.mouse.get_pos()
+                clicked_pos_x = int(mouse_pos_x/scale)
+                clicked_pos_y = int(mouse_pos_y/scale)
+                if grid.grid_array[clicked_pos_x][clicked_pos_y] == 1:
+                    grid.grid_array[clicked_pos_x][clicked_pos_y] = 0
+                else:
+                    grid.grid_array[clicked_pos_x][clicked_pos_y] = 1
             
     grid.conway(off_color=WHITE, on_color=BLUE, surface=screen, paused=pause)
     pygame.display.update()
