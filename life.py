@@ -40,15 +40,19 @@ while run:
         if event.type == pygame.KEYDOWN: 
             if event.key == pygame.K_SPACE: #Space - Pause the game on the current state
                 pause = not pause
-            if event.key == pygame.K_f: #F - Set the game to a full array and pauses it
+            if event.key == pygame.K_f: #F - Set the board to a full array and pauses it
                 grid.full_2d_array()
                 pause = True
-            if event.key == pygame.K_c: #C - Set the game to a clean array and pauses it
+            if event.key == pygame.K_c: #C - Set the board to a clean array and pauses it
                 grid.clean_2d_array()
                 pause = True
-            if event.key == pygame.K_r: #R - Set the game to a random state and unpauses it if paused
+            if event.key == pygame.K_r: #R - Set the board to a random state and unpauses it if paused
                 grid.random_2d_array()
                 pause = False
+            if event.key == pygame.K_i: #I - Reverses the board and pauses the game
+                grid.reverse_array()
+                pause = False
+
             if event.key == pygame.K_x: #X - Quit
                 pygame.quit()
 

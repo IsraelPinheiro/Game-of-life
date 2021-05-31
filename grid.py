@@ -26,6 +26,11 @@ class Grid:
             for y in range(self.columns):
                 self.grid_array[x][y] = 1
 
+    def reverse_array(self):
+        for x in range(self.rows):
+            for y in range(self.columns):
+                self.grid_array[x][y] = 1 - self.grid_array[x][y]
+
     def conway(self, off_color, on_color, surface, paused=False):
         for x in range(self.rows):
             for y in range(self.columns):
