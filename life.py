@@ -53,7 +53,11 @@ while run:
             if event.key == pygame.K_i: #I - Reverses the board and pauses the game
                 grid.reverse_array()
                 pause = False
-
+            if event.key == pygame.K_s: #S - Save board state
+                grid.saved_grid_array = grid.grid_array
+            if event.key == pygame.K_l: #L - Load board state and pauses the execution
+                grid.grid_array = grid.saved_grid_array
+                pause = True
             if event.key == pygame.K_x: #X - Quit
                 pygame.quit()
 

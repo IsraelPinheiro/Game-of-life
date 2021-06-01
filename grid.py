@@ -9,6 +9,7 @@ class Grid:
         self.rows = int(width/self.scale)
         self.size = (self.rows, self.columns)
         self.grid_array = np.ndarray(shape=self.size)
+        self.saved_grid_array = self.grid_array
         self.offset = offset
 
     def random_2d_array(self):
